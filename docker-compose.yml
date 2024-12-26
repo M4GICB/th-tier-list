@@ -1,0 +1,8 @@
+version: '3'
+services:
+  th-tier-list-web-app:
+    image: m4gicb/th-tier-list-web-app:latest
+    ports:
+      - "3005:3000"
+    env_file:
+      - .env
