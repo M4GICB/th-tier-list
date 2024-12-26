@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Copy the entire Next.js app to the container
-COPY .next/ .next/
+COPY . .
 
 # Expose the port that your Next.js app will run on (usually 3000)
 EXPOSE 3000
