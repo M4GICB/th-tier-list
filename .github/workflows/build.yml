@@ -29,7 +29,9 @@ jobs:
           echo "GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_CLIENT_SECRET }}" >> .env
 
       - name: Build Project
-        run: npm run build
+        run: |
+          npm run build
+          ls
 
       - name: Copy Files To Lightsail
         uses: appleboy/scp-action@v0.1.7
