@@ -31,7 +31,7 @@ jobs:
       - name: Build Project
         run: |
           npm run build
-          ls
+          ls -la
 
       - name: Copy Files To Lightsail
         uses: appleboy/scp-action@v0.1.7
