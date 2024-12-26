@@ -6,8 +6,8 @@ import MyAppBar from "@/components/appbar/MyAppBar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Next App + Next Auth - Template",
-  description: "Authentication template for Next.js applications",
+  title: "Top Heroes Tier List",
+  description: "Tier List Of Heroes",
 };
 
 export default function RootLayout({

@@ -46,6 +46,7 @@ export const HeroInfo = ({
         aria-describedby={id}
         color="primary"
         variant="outlined"
+        size="small"
         endIcon={<InfoIcon />}
         onClick={handleClick}
         sx={{ whiteSpace: "nowrap" }}

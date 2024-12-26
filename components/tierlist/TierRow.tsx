@@ -14,7 +14,7 @@ interface TierRowProps {
 
 export const TierRow: React.FC<TierRowProps> = ({ rank, heroes }) => {
   return (
-    <Stack direction="row" spacing={2} sx={{ height: "14vh", borderRadius: 1 }}>
+    <Stack direction="row" spacing={2} sx={{ height: "12vh", borderRadius: 1 }}>
       <RankBox rank={rank} />
       <ItemContainer heroes={heroes} />
     </Stack>
