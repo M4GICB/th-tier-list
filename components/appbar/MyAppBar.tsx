@@ -1,8 +1,7 @@
-// "use client"; // This is a client component 👈🏽
-
 //Next auth
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/utils/auth";
+import { checkAdmin } from "@/lib/auth/admins";
 
 //Material UI
 import * as React from "react";
@@ -21,16 +20,18 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 
 import { ProfileButton } from "./ProfileButton";
-import { LoginButton } from "./LoginButton";
+import { LoginButton } from "@/components/auth/LoginButton";
 import AuthMenu from "./AuthMenu";
-
-const pages = [
-  { name: "Tier List", path: "/" },
-  { name: "Edit", path: "edit" },
-];
 
 export default async function MyAppBar() {
   const session = await getServerSession(authOptions);
+  const adminFlagResult = await checkAdmin(session?.user?.email);
+
+  const pages = [{ name: "Tier List", path: "/" }];
+
+  if (adminFlagResult) {
+    pages.push({ name: "Edit", path: "edit" });
+  }
 
   return (
     <AppBar position="sticky">

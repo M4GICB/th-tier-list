@@ -1,5 +1,7 @@
 "use client"; // This is a client component 👈🏽
-import { useRouter } from "next/router";
+
+//React
+import { useState } from "react";
 
 //Material UI
 import * as React from "react";
@@ -15,7 +17,6 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 
 import { LogoutButton } from "../auth/LogoutButton";
 

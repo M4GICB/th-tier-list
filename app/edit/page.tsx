@@ -4,9 +4,11 @@ import { redirect } from "next/navigation";
 //Next auth
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/utils/auth";
+import { checkAdmin } from "@/lib/auth/admins";
 
 //Components
 import { AuthCard } from "@/components/auth/AuthCard";
+import { Unauthorized } from "@/components/auth/Unauthorized";
 
 export default async function EditPage() {
   const session = await getServerSession(authOptions);
@@ -14,6 +16,11 @@ export default async function EditPage() {
   //If there is a session the user is redirected to /
   if (!session) {
     redirect("/auth");
+  }
+
+  const adminFlag = await checkAdmin(session?.user?.email);
+  if (!adminFlag) {
+    return <Unauthorized back={"/"} />;
   }
 
   return (

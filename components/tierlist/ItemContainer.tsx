@@ -25,7 +25,7 @@ export const ItemContainer = (heroes: HeroList) => {
           pl: 2,
         }}
       >
-        {heroes.heroes.map((hero) => (
+        {heroes?.heroes?.map((hero) => (
           <HeroCard key={hero.name} hero={hero} />
         ))}
       </Stack>

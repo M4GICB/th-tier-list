@@ -5,7 +5,7 @@ import {
   SignInOptions,
   SignOutParams,
   signOut,
-  signIn as nextAuthSignIn
+  signIn as nextAuthSignIn,
 } from "next-auth/react";
 
 export const signIn = async (
@@ -13,7 +13,7 @@ export const signIn = async (
   options?: SignInOptions | undefined,
   authorizationParams?: SignInAuthorizationParams | undefined
 ) => {
-    return nextAuthSignIn(provider, options, authorizationParams);
+  return nextAuthSignIn(provider, options, authorizationParams);
 };
 
 export const logOut = async (options?: SignOutParams<true> | undefined) => {

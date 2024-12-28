@@ -5,7 +5,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/utils/auth";
 
 import { ProfileButton } from "./ProfileButton";
-import { LoginButton } from "./LoginButton";
+import { LoginButton } from "@/components/auth/LoginButton";
 
 export default async function AuthMenu() {
   const session = await getServerSession(authOptions);
